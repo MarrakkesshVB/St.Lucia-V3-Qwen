@@ -45,6 +45,7 @@ body.scrolled #topbar{background:rgba(5,5,7,.72);backdrop-filter:blur(14px);-web
 .bar-in{width:min(1280px,94vw);margin-inline:auto;display:flex;align-items:center;gap:1.4rem}
 .brand{display:flex;align-items:center;gap:.75rem;margin-right:auto}
 .brand svg{width:34px;height:23px;flex:none;filter:drop-shadow(0 2px 6px rgba(0,0,0,.5))}
+.brand-flag{width:40px;height:auto;flex:none;filter:drop-shadow(0 2px 6px rgba(0,0,0,.5))}
 .brand-name{font-family:var(--serif);font-weight:600;font-size:1.02rem;letter-spacing:.06em;line-height:1.1}
 .brand-name em{color:var(--gold);font-style:italic}
 .brand-sub{display:block;font-size:8.5px;letter-spacing:.34em;color:rgba(224,216,208,.55);text-transform:uppercase;margin-top:2px}
