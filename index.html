@@ -8,13 +8,13 @@
 <meta name="theme-color" content="#050507">
 <meta property="og:title" content="St. Lucia Express — Premium Freight Forwarding">
 <meta property="og:description" content="Elevating global freight forwarding through precision, speed, and uncompromising reliability. Miami ↔ St. Lucia.">
-<meta property="og:url" content="https://stluciaexpress.com/">
-<meta property="og:image" content="https://image.qwenlm.ai/public_source/fa8f9429-7b94-439c-b28f-b32d2e327e0f/198151bc8-78e8-4dcc-94e5-3d9b7527120b.png">
+<meta property="og:url" content="https://marrakkesshvb.github.io/St.Lucia-V3-Qwen/">
+<meta property="og:image" content="https://marrakkesshvb.github.io/St.Lucia-V2/assets/flag-og.png">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="St. Lucia Express — Premium Freight Forwarding">
 <meta name="twitter:description" content="Premium Freight Forwarding — Miami ↔ St. Lucia. 20+ years of excellence.">
-<meta name="twitter:image" content="https://image.qwenlm.ai/public_source/fa8f9429-7b94-439c-b28f-b32d2e327e0f/198151bc8-78e8-4dcc-94e5-3d9b7527120b.png">
+<meta name="twitter:image" content="https://marrakkesshvb.github.io/St.Lucia-V2/assets/flag-og.png">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%232F5FA5'/%3E%3Cpath d='M32 10 52 52 12 52Z' fill='%23C5A059'/%3E%3Cpath d='M32 16 48 52 16 52Z' fill='%230A0A0C'/%3E%3Cpath d='M32 26 42 52 22 52Z' fill='%23EDE9E3'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="preconnect" href="https://image.qwenlm.ai" crossorigin>
@@ -125,13 +125,8 @@ html.js .reveal-group>*{opacity:0;transform:translateY(38px)}
 
 /* ---------- sticky scenes ---------- */
 .scene{position:relative}
-.scene .sticky{position:sticky;top:0;min-height:100vh;min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:calc(var(--header-h) + 3vh) 0 8vh}
-#legacy{min-height:175vh}
-#services{min-height:165vh}
-#process{min-height:165vh}
-#network{min-height:215vh}
-#testimonials{min-height:155vh}
-#quote{min-height:150vh}
+.scene .sticky{position:relative;top:0;min-height:100vh;min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:calc(var(--header-h) + 3vh) 0 8vh}
+#legacy,#services,#process,#network,#testimonials,#quote{min-height:0}
 html.mode-fallback .scene{min-height:0!important}
 html.mode-fallback .scene .sticky{position:relative;min-height:0;padding:110px 0}
 
@@ -192,7 +187,7 @@ html.mode-fallback .scene .sticky{position:relative;min-height:0;padding:110px 0
 
 /* ---------- quote ---------- */
 #quote{position:relative}
-.quote-bg{position:absolute;inset:0;z-index:-1;background:url('https://image.qwenlm.ai/public_source/fa8f9429-7b94-439c-b28f-b32d2e327e0f/11b23a69e-89d3-4c17-b46f-fda6d1d7bcf0.png') center 62%/cover no-repeat;opacity:.5}
+.quote-bg{display:none}
 .quote-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,var(--bg) 0%,rgba(5,5,7,.35) 30%,rgba(5,5,7,.45) 70%,var(--bg) 100%)}
 .q-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:3rem;align-items:start}
 .q-contact{margin-top:2.2rem;display:flex;flex-direction:column;gap:.7rem}
@@ -224,7 +219,7 @@ footer{border-top:1px solid var(--hair);background:rgba(6,6,9,.85);backdrop-filt
 .foot-bottom{margin-top:3.6rem;padding-top:1.6rem;border-top:1px solid var(--hair);display:flex;flex-wrap:wrap;gap:1.2rem;align-items:center;justify-content:space-between;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(224,216,208,.45)}
 
 /* ---------- toast ---------- */
-#toast{position:fixed;left:50%;bottom:2rem;transform:translate(-50%,140%);z-index:60;background:var(--gold);color:var(--ink);font-size:.78rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:.9rem 1.6rem;border-radius:2px;transition:transform .5s cubic-bezier(.2,.7,.2,1);pointer-events:none}
+#toast{position:fixed;left:50%;bottom:2rem;transform:translate(-50%,calc(100% + 3rem));z-index:60;background:var(--gold);color:var(--ink);font-size:.78rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:.9rem 1.6rem;border-radius:2px;transition:transform .5s cubic-bezier(.2,.7,.2,1);pointer-events:none}
 #toast.show{transform:translate(-50%,0)}
 
 /* ---------- responsive ---------- */
@@ -810,8 +805,8 @@ for(let row=0;row<2;row++){
   for(let z=-11;z<=4;z+=5){
     const lv=1+Math.floor(rnd()*2);
     for(let l=0;l<lv;l++){
-      const m=new THREE.Mesh(new THREE.BoxGeometry(2.9,2.6,4.4),stackMats[Math.floor(rnd()*4)]);
-      m.position.set(row?1.1:3.0,4.0+l*2.6,z);
+      const m=new THREE.Mesh(new THREE.BoxGeometry(2.3,2.6,4.4),stackMats[Math.floor(rnd()*4)]);
+      m.position.set(row?1.2:3.6,4.0+l*2.6,z);
       ship.add(m);
     }
   }
@@ -833,18 +828,6 @@ for(let k=0;k<8;k++){
   buoyList.push(g);buoys.add(g);
 }
 scene.add(buoys);
-
-/* ---------- pitons ---------- */
-function piton(r,h,x,z){
-  const g=new THREE.Group();
-  const geo=new THREE.ConeGeometry(r,h,4,1);
-  const m=new THREE.Mesh(geo,M.piton);m.rotation.y=Math.PI/4;g.add(m);
-  const e=new THREE.LineSegments(new THREE.EdgesGeometry(geo),new THREE.LineBasicMaterial({color:0xC5A059,transparent:true,opacity:.6}));
-  e.rotation.y=Math.PI/4;g.add(e);
-  g.position.set(x,h/2-2,z);return g;
-}
-scene.add(piton(24,72,-34,-190));
-scene.add(piton(30,96,14,-235));
 
 /* ---------- GOLDEN GLOBE ---------- */
 const globe=new THREE.Group();
@@ -922,31 +905,35 @@ const portMat=new THREE.ShaderMaterial({
 });
 globe.add(new THREE.Points(portGeo,portMat));
 
-/* Miami ↔ St. Lucia markers */
-[ [25.76,-80.19],[13.99,-60.99] ].forEach(p=>{
-  const v=latLonToVec3(p[0],p[1],R+0.3);
-  const mk=new THREE.Mesh(new THREE.SphereGeometry(.8,12,12),new THREE.MeshBasicMaterial({color:0xFFE3A6}));
-  mk.material.fog=false;mk.position.copy(v);globe.add(mk);
-  const sp=new THREE.Sprite(new THREE.SpriteMaterial({map:GLOW,color:0xC5A059,transparent:true,opacity:.9,blending:THREE.AdditiveBlending,depthWrite:false}));
-  sp.scale.set(7,7,1);sp.position.copy(v);globe.add(sp);
+/* orbital comets: estelas de luz girando alrededor del planeta */
+const TAU=Math.PI*2;
+const ORBITS=[
+ {r:1.05,tilt:[1.1,0,0.35],speed:0.10,phase:0.10},
+ {r:1.12,tilt:[-0.5,0,1.15],speed:0.07,phase:0.55},
+ {r:1.20,tilt:[0.35,0,-0.95],speed:0.055,phase:0.30},
+ {r:1.08,tilt:[0.85,0,2.10],speed:0.085,phase:0.80},
+ {r:1.16,tilt:[-1.0,0,-0.55],speed:0.065,phase:0.42},
+ {r:1.03,tilt:[0.55,0,1.75],speed:0.095,phase:0.65}
+];
+const comets=ORBITS.map(o=>{
+  const Ro=R*o.r;
+  const pts=[];
+  for(let k=0;k<=120;k++){
+    const a=TAU*k/120;
+    pts.push(new THREE.Vector3(Math.cos(a)*Ro,0,Math.sin(a)*Ro));
+  }
+  const curve=new THREE.CatmullRomCurve3(pts,false);
+  const geo=new THREE.TubeGeometry(curve,240,0.07,5,false);
+  const mat=new THREE.MeshBasicMaterial({color:0xC5A059,transparent:true,opacity:0,blending:THREE.AdditiveBlending,depthWrite:false});
+  mat.fog=false;
+  const mesh=new THREE.Mesh(geo,mat);
+  mesh.rotation.set(...o.tilt);
+  globe.add(mesh);
+  const head=new THREE.Sprite(new THREE.SpriteMaterial({map:GLOW,color:0xFFE3A6,transparent:true,opacity:0,blending:THREE.AdditiveBlending,depthWrite:false}));
+  head.scale.set(3.5,3.5,1);
+  mesh.add(head);
+  return {geo,mat,head,Ro,speed:o.speed,phase:o.phase};
 });
-
-/* golden arc + travelling light */
-const vMia=latLonToVec3(25.76,-80.19,R+0.3);
-const vLuc=latLonToVec3(13.99,-60.99,R+0.3);
-const mid=vMia.clone().add(vLuc).normalize().multiplyScalar(R*1.5);
-const arcCurve=new THREE.QuadraticBezierCurve3(vMia,mid,vLuc);
-const tubeGeo=new THREE.TubeGeometry(arcCurve,120,0.16,8,false);
-const tubeMat=new THREE.MeshBasicMaterial({color:0xC5A059,transparent:true,opacity:0});
-tubeMat.fog=false;
-const arcMesh=new THREE.Mesh(tubeGeo,tubeMat);
-globe.add(arcMesh);
-const totalIdx=tubeGeo.index.count;
-tubeGeo.setDrawRange(0,0);
-const traveler=new THREE.Mesh(new THREE.SphereGeometry(.55,12,12),new THREE.MeshBasicMaterial({color:0xFFE3A6}));
-traveler.material.fog=false;traveler.visible=false;globe.add(traveler);
-const travGlow=new THREE.Sprite(new THREE.SpriteMaterial({map:GLOW,color:0xC5A059,transparent:true,opacity:.9,blending:THREE.AdditiveBlending,depthWrite:false}));
-travGlow.scale.set(6,6,1);traveler.add(travGlow);
 
 /* atmosphere */
 const atmo=new THREE.Sprite(new THREE.SpriteMaterial({map:GLOW,color:0xC5A059,transparent:true,opacity:0,blending:THREE.AdditiveBlending,depthWrite:false}));
@@ -968,8 +955,8 @@ function buildKeys(){
     {p:pL+0.03,cam:[-10,2.4,11],look:[3,2.6,-24],ocean:1,globe:0,arc:0,wake:.35,speed:.9,fogN:40,fogF:340,par:1.8},
     {p:pS+0.02,cam:[-9.5,9.8,14],look:[0,6.2,-4],ocean:1,globe:0,arc:0,wake:.3,speed:.85,fogN:45,fogF:380,par:1.5},
     {p:pP+0.02,cam:[2,24,36],look:[0,1.5,-30],ocean:1,globe:0,arc:0,wake:1,speed:1.25,fogN:60,fogF:520,par:1.3},
-    {p:pN-0.02,cam:[0,46,66],look:[0,26,-52],ocean:.45,globe:.12,arc:0,wake:.35,speed:.8,fogN:90,fogF:760,par:1.0},
-    {p:(pN+pT)/2,cam:[6,132,46],look:[0,120,-40],ocean:0,globe:1,arc:.85,wake:0,speed:0,fogN:180,fogF:1500,par:.9},
+    {p:pN-0.02,cam:[2,64,72],look:[0,64,-48],ocean:.4,globe:.45,arc:0,wake:.3,speed:.8,fogN:120,fogF:900,par:1.0},
+    {p:pN+0.03,cam:[6,130,50],look:[0,130,-40],ocean:0,globe:1,arc:1,wake:0,speed:0,fogN:180,fogF:1500,par:.9},
     {p:pT+0.02,cam:[42,128,18],look:[0,120,-40],ocean:0,globe:1,arc:1,wake:0,speed:0,fogN:180,fogF:1500,par:.7},
     {p:pQ-0.05,cam:[-6,16,34],look:[0,8,-60],ocean:.55,globe:.2,arc:1,wake:.3,speed:.4,fogN:110,fogF:640,par:1.2},
     {p:pQ+0.03,cam:[-12,5.2,26],look:[2,5,-60],ocean:1,globe:0,arc:1,wake:.45,speed:.35,fogN:46,fogF:330,par:1.7},
@@ -1079,18 +1066,22 @@ function frame(){
   /* globe */
   globe.visible=cur.globe>0.02;
   if(globe.visible){
-    globe.rotation.y=elapsed*0.06;
+    globe.rotation.y=elapsed*0.12;
     dotMat.uniforms.uOpacity.value=cur.globe;
     portMat.uniforms.uOpacity.value=cur.globe;
     portMat.uniforms.uTime.value=elapsed;
-    tubeMat.opacity=cur.globe*0.95;
-    tubeGeo.setDrawRange(0,Math.floor(totalIdx*cur.arc));
-    atmo.material.opacity=cur.globe*0.45;
-    if(cur.arc>0.05){
-      let tt=(elapsed*0.085)%2;if(tt>1)tt=2-tt;
-      traveler.position.copy(arcCurve.getPoint(tt));
-      traveler.visible=true;
-    }else traveler.visible=false;
+    for(const c of comets){
+      const total=c.geo.index.count;
+      const win=Math.floor(total*0.16);
+      const f=(elapsed*c.speed+c.phase)%1;
+      const fade=Math.max(0,Math.min(1,f/0.1,(1-f)/0.1));
+      c.mat.opacity=cur.globe*0.55*fade;
+      const start=Math.floor(f*(total-win));
+      c.geo.setDrawRange(start,win);
+      const aH=TAU*((start+win)/total);
+      c.head.position.set(Math.cos(aH)*c.Ro,0,Math.sin(aH)*c.Ro);
+      c.head.material.opacity=cur.globe*0.9*fade;
+    }
   }
 
   renderer.render(scene,camera);
